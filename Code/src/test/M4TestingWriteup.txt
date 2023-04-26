@@ -1,0 +1,33 @@
+startButtonTest and noEnemiesUntilStartTest 
+These tests are intended to verify the functionality of the Start button component. 
+To do so, the former checks to see if the enemies spawn and start moving following 
+the usage of the Start button, and the latter test verifies that the enemies do not 
+exist on the path or main game screen until the Start button is pressed.
+
+testHealthReduction() and testEqualDamage()
+These tests make sure that the enemies are reducing the monument health in the proper 
+ways. First one ensures that health is only decreased when a goblin reaches the monument. 
+The second one ensures that (a) all goblins deal the same amount of damage and that 
+(b) the goblins past the first actually deal damage.
+
+testEnemiesStartAtBeginning() and testEnemiesMove()
+TestEnemiesStartAtBeginning() verifies that an enemy is placed at the beginning of 
+the path when the start combat button is clicked. It is important that each enemy 
+appears in the same location each time it is added to the scene to ensure the enemy 
+movement is consistent. TestEnemiesMove() verifies that an enemy moves once added to 
+the screen by checking if the position is incremented by the expected amount. 
+
+testRestart() and testExit()
+The testRestart() method checks to see if the restart button in the game over screen 
+functions properly by verifying that clicking the restart button takes users back to 
+the welcome screen. The testExit() method checks to see if the exit button in the game 
+over screen functions correctly by making sure that clicking the exit button closes the game.
+
+testGameOver() and testNoGameOver()
+The testGameOver() method checks that once the monument health reaches 0 or below, 
+the Game Over screen appears. To verify that the Game Over screen shows up, the 
+verifyThat() method checks that a node on the Game Over screen appears. The 
+testNoGameOver() method does the opposite, and makes sure that the Game Over screen
+ does not appear while the monument health is greater than 0. To check this, the 
+screen with the path and enemies is chosen as the target window and checked to make
+ sure it is still visible.

@@ -1,0 +1,45 @@
+tower3DoesDamage() and canPlaceTowersMidWave()
+The first method is simply testing if the third tower (the Paladin) deals damage
+to the goblins. This is checked by placing a few Paladin towers, counting the initial
+amount of rectangles, and seeing if this count is reduced by 2 when 2 goblins are defeated.
+This is imporant to the game because the towers need to be able to defend the monument
+by defeating the goblins. The second method tests if a tower can be placed mid wave by 
+checking the initial number of rectangles, adding a tower, then checking if the number
+increased. This is important because adding towers mid waves can be important to winning
+the game as any extra damage helps.
+
+testDamagedGoblinsDontGiveMoney() and testDeadGoblinsGiveMoney()
+testDamagedGoblinsDontGiveMoney() verifies that money is not gained until a goblin is fully defeated.
+This test is checked by placing towers so that goblins receive damage, but not enough towers that
+any goblins are killed. The test verifies that the money does not increase after towers are placed.
+This is important to test because players should only receive money when a goblin is killed.
+testDeadGoblinsGiveMoney() verifies that dead goblins do give money. This test is checked by
+placing enough towers that a single goblin is killed, then checking if the money is increased by
+the expected amount. This is important to check because the player needs to receive money
+when goblins are killed to be able to buy more towers.
+
+testDamagedGoblinsChangeOpacity() and testNonDamagedGoblinsFullOpacity()
+The testDamagedGoblinsChangeOpacity() method checks that goblins lose opacity when they are
+damaged by a tower. To verify this test, the nodes on the path are initially counted. After
+a tower is placed and some goblins are attacked, the nodes that have an opacity of less than
+1 are counted. The testNonDamagedGoblinsFullOpacity() method verifies that goblins that haven't
+been damaged remain at full opacity. To check this, the same process occors. After the nodes
+on the path are counted, a tower is placed, and some goblins are attacked, the nodes that have
+an opacity of 1 are counted.
+
+testDeadGoblinsDealNoDamage() and testDamagedGoblinsDealDamage()
+These tests are intended to verify that damage to goblins works as intended in regards to their
+damage to the monument. The former of the two tests checks to see that dead goblins do not deal
+damage to the monument by creating a defense that kills the wave of enemies, then checks that
+the monument's health is still at the maximum after the goblins otherwise would have reached
+it. The latter test designs a defense that kills all but one of the goblins, and leaves said
+goblin in a damaged state. The test allows that goblin to reach the monument, and checks to
+see if the monument is damaged the appropriate amount.
+
+testTower1Damage() and testTower2Damage()
+testTower1Damage() checks that squire towers damage goblins. This test verifies that by checking
+that two goblins "disappear" (aka health decreases to 0) after being attacked by three squire towers,
+showing that squire towers can attack goblins and damage their health. testTower2Damage() checks
+that archer towers damage goblins. This test verifies that by checking that one goblin "disappears"
+(aka health decreases to 0) after being attacked by three archer towers, showing that archer towers
+can attack goblins and damage their health.

@@ -1,0 +1,48 @@
+towersUpgradeWhenClicked() and pathDoesNotUpgradeWhenClicked()
+The method towersUpgradeWhenClicked() tests that towers get upgraded when they are
+selected. To verify this, a Squire tower and Paladin tower are placed and checked
+that their colors are green and purple respectively. After upgrading both towers,
+their colors are checked again for a brighter green and purple. The
+pathDoesNotUpgradeWhenClicked() method checks that the path does not get upgraded
+when it is selected. To test this, a for loop traverses the path to ensure all sections
+of the path have a blue color. After clicking upgrade and then a spot on the path,
+another for loop checks that the color of all the sections of the path are still blue.
+
+oldWaveGoblinsAreRemoved() and differentWavesHaveDiffGobNumbers()
+The method oldWaveGoblinsAreRemoved() tests that the goblins from the previous round
+are put out-of-play once a new round starts. The method makes sure that the 5 goblins
+in round 1 are given very low negative movement counts once round 2 starts. This ensures
+that the goblins from previous rounds don't mess with the mechanics of the goblins in the
+current round. This ensures proper goblin movements and round progression.
+The method differentWavesHaveDiffGobNumbers() tests that the numbers of goblins between
+different rounds change (round 1 has 5, round 2 has 10). The first round is checked just by 
+simply counting the number of goblins. The second round is checked by counting all the goblins, 
+and then subtracting all the "out-of-play" goblins from previous rounds (since those aren't 
+destroyed). This ensures that rounds get harder as they move on, providing a challenge for players.
+
+bossGoblinShowsUp() and bossDamagesMonument()
+bossGoblinShowsUp() tests that the boss goblin exists and shows up on the third enemy wave. The
+method checks this by letting the game play out until the third wave while verifying the number of
+enemies in each wave, specifically ensuring that the third wave contains an extra enemy representing
+the boss goblin. bossDamagesMonument() tests that if the boss goblin reaches the monument then it
+decreases the monument health. The method checks this by playing the game through the third wave so that only
+the boss goblin reaches the monument and verifies that monument health takes 50 damage.
+
+testUpgradedTowersDoMoreDamage() and testGameLossDefeatedStats()
+testUpgradedTowersDoMoreDamage() verifies that upgraded towers do more damage to enemies. This test first 
+places a regular tower and verifies that the damage is set to the expected amount. Then, the test upgrades 
+the tower and checks if the damage is set to twice the original amount. This test is important because an 
+upgraded tower should not only look different, but should also have different functionality to be meaningful 
+to the gameplay. testGameLossStats() verifies that when the player loses the game, the statistic for the number 
+of goblins defeated is shown on the GameLossScreen. This test verifies that the correct statistic is shown by 
+placing a tower and verifying that the text displayed on the GameLossScreen matches what happened during the 
+test’s gameplay. This test is important because it verifies that the statistic is present and it is accurate.
+
+testGameLossTowersStats() and testGameLossUpgradeStats()
+These tests are designed to verify the desired functionality of certain statistics on the game over screen.
+testGameLossTowersStats() checks to see that the "Number of Towers Placed" statistic on the game over
+screen matches the desired value, which is how many towers were placed by the player during the game. 
+testGameLossUpgradeStats() tests the value that shows up on the game over screen for the "Number of towers
+upgraded" statistic, which refers to the number of upgrades the player bought for their towers during the
+game.
+
